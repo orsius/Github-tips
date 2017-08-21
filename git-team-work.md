@@ -97,6 +97,15 @@ Benefits of releases:
 :information_source: it's based on your tags.
 
 
+## Issues
+Use issues for tracking:
+* bugs
+* features
+*(you can simply use labels do achieve that)*
 
+:information_source: To automaticaly close an issue, you can simply add `fixes #` to your message commit.
 
+```bash
+git commit -m "fixes #1"
+```
 
