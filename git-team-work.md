@@ -109,3 +109,54 @@ Use issues for tracking:
 git commit -m "fixes #1"
 ```
 
+# Markdown 
+## readme.md
+## wikipage
+go to https://github.com/<github_user>/<repo_name>/wiki/_new
+
+# Managing and Securing GitHub
+Repo setup, tracking project progress and managing access to your repositories.
+
+## Acces Control in Github
+* Owners can do anything
+* Collaborators can do anything except manage settings
+* Limit ability to commit using fork
+
+:information_source: all dev work on the same code base BUT then have a seperate repo to send pull request to. AND only the team lead or a manager can reject or accept.
+
+* HTTPS favored over SSH
+* Use a credential help to avoid typing passwords
+* Upgrade to two factor authentication (2FA)
+* Creat Access Tokens
+	* For login with 2FA
+	* For access via build script/API calls, etc.
+*(To do so, simply go to 'personal access tokens" and click 'Generate new token' button.)*
+
+### Automated Github Access Options
+* SSH agent forwarding => great starting point, no automation available
+* OAuth acess tokens => same permissions as the user
+* Deploy key => access token limited to a single repo
+* Machine user => create a new github account and manage its permissions
+
+
+# Authomating Github
+Integrating existing services, creating custom webhooks, and working with the GitHub API.
+
+## Services
+## Webhooks
+
+## Github API
+```bash
+curl https://api.github.com
+curl https://api.github.com/users/orsius
+# shows you X-RateLimit values
+curl -i https://api.github.com/users/orsius | grep X-RateLimit
+# Authentication with token
+## get info about your username
+curl -i -H'Authorization: token ${TOKEN_HASH}' https://api.github.com/user
+## create a repository
+curl -i -H'Authorization: token ${TOKEN_HASH}' -d'{"name": "newest_repo"}' https://api.github.com/user/repos
+
+```
+
+
